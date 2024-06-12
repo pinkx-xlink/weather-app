@@ -2,7 +2,20 @@ body {
     display: flex;
     justify-content: center;
 }
+.header {
+    display: flex;
+    align-items: center;
+}
 h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-style: italic;
+}
+.search {
+    margin: 50px;
+}
+#searchbar {
+    height: 25px;
+}
+button {
+    height: 25px;
 }
