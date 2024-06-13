@@ -1,3 +1,6 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 body {
     display: flex;
     flex-direction: column;
@@ -29,4 +32,11 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-top: 30px;
+}
+.temp-card {
+    background-color: wheat;
+    padding: 25px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
 }
