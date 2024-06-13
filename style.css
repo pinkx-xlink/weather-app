@@ -9,24 +9,19 @@ body {
 .header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-style: italic;
 }
 .search {
-    margin: 50px;
-}
-#searchbar {
-    height: 25px;
-}
-button {
-    height: 25px;
+    height: 50px;
 }
 .nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 .forecast-container {
     display: flex;
