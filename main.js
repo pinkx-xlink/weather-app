@@ -3,6 +3,7 @@ const url = 'https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d71
 const city = document.querySelector('.city');
 const temp = document.querySelector('.temp');
 const currentTempCard = document.getElementById('forecast-today');
+// Fetch the CURRENT weather info
 fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q=chicago')
   .then(response => response.json())
   .then(data => {
@@ -27,3 +28,8 @@ try {
 } catch (error) {
   console.log(error);
 }
+
+// Fetch tomorrow's forecast
+
+
+// Fetch the forecast for in two days from now
