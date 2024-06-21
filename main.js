@@ -1,6 +1,6 @@
 const url = 'https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q=chicago';
 
-const dataContainer = document.querySelector('.data-container');
+const city = document.querySelector('.city');
 
 fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q=chicago')
   .then(response => response.json())
@@ -15,7 +15,7 @@ fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d71085523
     const currentLocation = currentCity + ', ' + currentState;
     console.log(`${currentLocation}`);
     // data is stored as an object
-    dataContainer.innerHTML = currentLocation;
+    city.innerHTML = currentLocation;
     // Add the current temp to the farthest left card
     
   })
