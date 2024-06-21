@@ -16,6 +16,7 @@ fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d71085523
     console.log(`${currentLocation}`);
     // data is stored as an object
     dataContainer.innerHTML = currentLocation;
+    // Add the current temp to the farthest left card
     
   })
 try {
