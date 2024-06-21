@@ -15,7 +15,8 @@ fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d71085523
     const currentLocation = currentCity + ', ' + currentState;
     console.log(`${currentLocation}`);
     // data is stored as an object
-    dataContainer.innerHTML = data;
+    dataContainer.innerHTML = currentLocation;
+    
   })
 try {
   // nonexistantFunction();
