@@ -32,16 +32,21 @@ try {
 fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d710855232908&q=chicago')
   .then(response => response.json())
   .then(data => {console.log(data);})
-
+  try {
+    // nonexistantFunction();
+  } catch (error) {
+    console.log(error);
+  }
 
 // Fetch tomorrow's forecast
-
-
-
 
 // Fetch the current astronomy
 fetch('https://api.weatherapi.com/v1/astronomy.json?key=48e6d0ed95094ce58d710855232908&q=chicago')
   .then(response => response.json())
   .then(data => { console.log(data) })
-
+  try {
+    // nonexistantFunction();
+  } catch (error) {
+    console.log(error);
+  }
 // Fetch the forecast for in two days from now
