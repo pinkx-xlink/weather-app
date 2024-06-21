@@ -20,13 +20,10 @@ fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d71085523
     currentTempCard.innerHTML = `
     <h2>${currentTempF}℉</h2>
     <p>${data.current.condition.text}</p>
-    
     `;
-    // Add the current temp to the farthest left card
-    
-  })
+  });
 try {
   // nonexistantFunction();
 } catch (error) {
-  console.log(error)
+  console.log(error);
 }
