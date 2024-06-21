@@ -1,0 +1,7 @@
+
+  .then(data => {
+    console.log(data);
+    const dataDiv = document.createElement('div');
+    dataDiv.innerHTML = data;
+    document.body.appendChild(dataDiv);
+  });
