@@ -20,9 +20,9 @@ fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d71085523
   .then(data => {
     console.log(data);
     const currentTempF = data.current.temp_f;
-    console.log(`Current temp in Farenheit: ${currentTempF} F`)
+    console.log(`Current temp in Farenheit: ${currentTempF} F`);
     const currentTempC = data.current.temp_c;
-    console.log(`Current temp in Celsius: ${currentTempC} C`)
+    console.log(`Current temp in Celsius: ${currentTempC} C`);
     currentCity = data.location.name;
     currentState = data.location.region;
     currentLocation = currentCity + ', ' + currentState;
@@ -77,12 +77,12 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d7108552
     <p>High: ${twoDayHighTemp}℉</p>
     <p>Low: ${twoDayLowTemp}℉</p>
     `;
-  })
-  try {
-    // nonexistantFunction();
-  } catch (error) {
-    console.log(error);
-  }
+  });
+try {
+  // nonexistantFunction();
+} catch (error) {
+  console.log(error);
+}
 
 // Fetch the current astronomy
 fetch('https://api.weatherapi.com/v1/astronomy.json?key=48e6d0ed95094ce58d710855232908&q=chicago')
@@ -92,29 +92,29 @@ fetch('https://api.weatherapi.com/v1/astronomy.json?key=48e6d0ed95094ce58d710855
     const moonPhase = data.astronomy.astro.moon_phase;
     const moonIcon = 
     astronomy.innerHTML += `${moonPhase}`;
-  })
-  try {
-    // nonexistantFunction();
-  } catch (error) {
-    console.log(error);
-  }
+  });
+try {
+  // nonexistantFunction();
+} catch (error) {
+  console.log(error);
+}
 
-  function searchCity(e) {
-    e.preventDefault();
-    const search = document.querySelector('.searchbar').value;
-    fetch(`https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q=${search}`)
+function searchCity(e) {
+  e.preventDefault();
+  const search = document.querySelector('.searchbar').value;
+  fetch(`https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q=${search}`)
     .then(response => response.json())
     .then(data => {
       console.log(data);
       const currentTempF = data.current.temp_f;
-      console.log(`Current temp in Farenheit: ${currentTempF} F`)
+      console.log(`Current temp in Farenheit: ${currentTempF} F`);
       const currentTempC = data.current.temp_c;
-      console.log(`Current temp in Celsius: ${currentTempC} C`)
+      console.log(`Current temp in Celsius: ${currentTempC} C`);
       currentCity = data.location.name;
       currentState = data.location.region;
-       currentLocation = currentCity + ', ' + currentState;
-       weatherDescription = data.current.condition.text;
-       currentWeatherIcon = data.current.condition.icon;
+      currentLocation = currentCity + ', ' + currentState;
+      weatherDescription = data.current.condition.text;
+      currentWeatherIcon = data.current.condition.icon;
       console.log(`${currentLocation}`);
       // data is stored as an object
       city.innerHTML = currentLocation;
@@ -129,5 +129,5 @@ fetch('https://api.weatherapi.com/v1/astronomy.json?key=48e6d0ed95094ce58d710855
   } catch (error) {
     console.log(error);
   }
-  }
+}
   
