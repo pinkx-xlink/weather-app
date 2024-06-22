@@ -56,7 +56,11 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d7108552
     const twoDayAverageTemp = data.forecast.forecastday[2].day.avgtemp_f;
     const twoDayHighTemp = data.forecast.forecastday[2].day.maxtemp_f;
     const twoDayLowTemp = data.forecast.forecastday[2].day.mintemp_f;
+    const twoDayWeatherDescription = data.forecast.forecastday[2].day.condition.text;
+    const twoDayWeatherIcon = data.forecast.forecastday[2].day.condition.icon;
     twoDayForecast.innerHTML = `
+    <img src=${twoDayWeatherIcon} /img>
+    <p>${twoDayWeatherDescription}</p>
     <h2>${twoDayAverageTemp}</h2>
     <p>High: ${twoDayHighTemp}</p>
     <p>Low: ${twoDayLowTemp} </p>
