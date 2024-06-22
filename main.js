@@ -19,32 +19,32 @@ let currentTempF;
 // Default 
 function setDefaultCity() {
   fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q=chicago')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-     currentTempF = data.current.temp_f;
-    console.log(`Current temp in Farenheit: ${currentTempF} F`)
-     currentTempC = data.current.temp_c;
-    console.log(`Current temp in Celsius: ${currentTempC} C`)
-    currentCity = data.location.name;
-    currentState = data.location.region;
-    currentLocation = currentCity + ', ' + currentState;
-    weatherDescription = data.current.condition.text;
-    currentWeatherIcon = data.current.condition.icon;
-    console.log(`${currentLocation}`);
-    // data is stored as an object
-    city.innerHTML = currentLocation;
-    currentTempCard.innerHTML = `
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      currentTempF = data.current.temp_f;
+      console.log(`Current temp in Farenheit: ${currentTempF} F`)
+      currentTempC = data.current.temp_c;
+      console.log(`Current temp in Celsius: ${currentTempC} C`)
+      currentCity = data.location.name;
+      currentState = data.location.region;
+      currentLocation = currentCity + ', ' + currentState;
+      weatherDescription = data.current.condition.text;
+      currentWeatherIcon = data.current.condition.icon;
+      console.log(`${currentLocation}`);
+      // data is stored as an object
+      city.innerHTML = currentLocation;
+      currentTempCard.innerHTML = `
     <img src=${currentWeatherIcon} /img>
     <p>${weatherDescription}</p>
     <h2>${currentTempF}℉</h2>
     `;
-  });
-try {
+    });
+  try {
   // nonexistantFunction();
-} catch (error) {
-  console.log(error);
-}
+  } catch (error) {
+    console.log(error);
+  }
 }
 setDefaultCity();
 
@@ -54,32 +54,32 @@ submit.addEventListener('click', function searchCity(e) {
   e.preventDefault();
   const search = document.querySelector('.searchbar').value;
   fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q='+`${search}`)
-  .then(response => response.json())
-  .then(resp => {
-    console.log(resp);
-     currentTempF = resp.current.temp_f;
-    console.log(`Current temp in Farenheit: ${currentTempF} F`)
-     currentTempC = resp.current.temp_c;
-    console.log(`Current temp in Celsius: ${currentTempC} C`)
-    currentCity = resp.location.name;
-    currentState = resp.location.region;
-     currentLocation = currentCity + ', ' + currentState;
-     weatherDescription = resp.current.condition.text;
-     currentWeatherIcon = resp.current.condition.icon;
-    console.log(`${currentLocation}`);
-    // data is stored as an object
-    city.innerHTML = currentLocation;
-    currentTempCard.innerHTML = `
+    .then(response => response.json())
+    .then(resp => {
+      console.log(resp);
+      currentTempF = resp.current.temp_f;
+      console.log(`Current temp in Farenheit: ${currentTempF} F`)
+      currentTempC = resp.current.temp_c;
+      console.log(`Current temp in Celsius: ${currentTempC} C`)
+      currentCity = resp.location.name;
+      currentState = resp.location.region;
+      currentLocation = currentCity + ', ' + currentState;
+      weatherDescription = resp.current.condition.text;
+      currentWeatherIcon = resp.current.condition.icon;
+      console.log(`${currentLocation}`);
+      // data is stored as an object
+      city.innerHTML = currentLocation;
+      currentTempCard.innerHTML = `
     <img src=${currentWeatherIcon} /img>
     <p>${weatherDescription}</p>
     <h2>${currentTempF}℉</h2>
     `;
-  });
-try {
+    });
+  try {
   // nonexistantFunction();
-} catch (error) {
-  console.log(error);
-}
+  } catch (error) {
+    console.log(error);
+  }
 });
 // Fetch the current forecast (min and high temps)
 fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d710855232908&q=chicago&days=3')
@@ -117,25 +117,23 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d7108552
     <p>Low: ${twoDayLowTemp}℉</p>
     `;
   })
-  try {
-    // nonexistantFunction();
-  } catch (error) {
-    console.log(error);
-  }
+try {
+  // nonexistantFunction();
+} catch (error) {
+  console.log(error);
+}
 
 // Fetch the current astronomy
 fetch('https://api.weatherapi.com/v1/astronomy.json?key=48e6d0ed95094ce58d710855232908&q=chicago')
   .then(response => response.json())
-  .then(data => { 
+  .then(data => {
     console.log(data);
     const moonPhase = data.astronomy.astro.moon_phase;
-    const moonIcon = 
+    // const moonIcon = 
     astronomy.innerHTML += `${moonPhase}`;
   })
-  try {
-    // nonexistantFunction();
-  } catch (error) {
-    console.log(error);
-  }
-
-  
+try {
+  // nonexistantFunction();
+} catch (error) {
+  console.log(error);
+}
