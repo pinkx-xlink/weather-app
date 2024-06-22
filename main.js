@@ -19,10 +19,12 @@ fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d71085523
     const currentState = data.location.region;
     const currentLocation = currentCity + ', ' + currentState;
     const weatherDescription = data.current.condition.text;
+    const currentWeatherIcon = data.current.condition.icon;
     console.log(`${currentLocation}`);
     // data is stored as an object
     city.innerHTML = currentLocation;
     currentTempCard.innerHTML = `
+    <img src=${currentWeatherIcon} /img>
     <h2>${currentTempF}℉</h2>
     <p>${weatherDescription}</p>
     `;
