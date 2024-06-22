@@ -41,6 +41,14 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d7108552
     <p>High: ${tempHigh}</p>
     <p>Low: ${tempLow} </p>
     `;
+    const tmrwAverageTemp = data.forecast.forecastday[1].day.avgtemp_f;
+    const tmrwHighTemp = data.forecast.forecastday[1].day.maxtemp_f;
+    const tmrwLowTemp = data.forecast.forecastday[1].day.mintemp_f;
+    tomorrowTempCard.innerHTML = `
+    <h2>${tmrwAverageTemp}</h2>
+    <p>High: ${tmrwHighTemp}</p>
+    <p>Low: ${tmrwLowTemp} </p>
+    `;
   })
   try {
     // nonexistantFunction();
