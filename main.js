@@ -48,7 +48,11 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d7108552
     const tmrwAverageTemp = data.forecast.forecastday[1].day.avgtemp_f;
     const tmrwHighTemp = data.forecast.forecastday[1].day.maxtemp_f;
     const tmrwLowTemp = data.forecast.forecastday[1].day.mintemp_f;
+    const tmrwWeatherDescription = data.forecast.forecastday[1].day.condition.text;
+    const tmrwWeatherIcon = data.forecast.forecastday[1].day.condition.icon;
     tomorrowTempCard.innerHTML = `
+     <img src=${tmrwWeatherIcon} /img>
+    <p>${tmrwWeatherDescription}</p>
     <h2>${tmrwAverageTemp}</h2>
     <p>High: ${tmrwHighTemp}</p>
     <p>Low: ${tmrwLowTemp} </p>
