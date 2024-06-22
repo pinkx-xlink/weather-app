@@ -4,6 +4,7 @@ const city = document.querySelector('.city');
 const temp = document.querySelector('.temp');
 const currentTempCard = document.getElementById('forecast-today');
 const tomorrowTempCard = document.getElementById('forecast-tomorrow');
+const twoDayForecast = document.getElementById('forecast-in-two-days');
 const astronomy = document.querySelector('.astronomy');
 // Fetch the CURRENT temp
 fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q=chicago')
@@ -49,6 +50,14 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d7108552
     <h2>${tmrwAverageTemp}</h2>
     <p>High: ${tmrwHighTemp}</p>
     <p>Low: ${tmrwLowTemp} </p>
+    `;
+    const twoDayAverageTemp = data.forecast.forecastday[2].day.avgtemp_f;
+    const twoDayHighTemp = data.forecast.forecastday[2].day.maxtemp_f;
+    const twoDayLowTemp = data.forecast.forecastday[2].day.mintemp_f;
+    twoDayForecast.innerHTML = `
+    <h2>${twoDayAverageTemp}</h2>
+    <p>High: ${twoDayHighTemp}</p>
+    <p>Low: ${twoDayLowTemp} </p>
     `;
   })
   try {
