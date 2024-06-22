@@ -10,14 +10,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    align-content: center;
 }
 h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-style: italic;
 }
-.search {
-    height: 50px;
-}
+
 .nav {
     display: flex;
     flex-direction: row;
