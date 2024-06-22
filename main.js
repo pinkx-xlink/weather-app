@@ -14,6 +14,8 @@ let currentState;
 let currentLocation;
 let weatherDescription;
 let currentWeatherIcon;
+let currentTempF;
+let currentTempC;
 
 function searchCity(e) {
   e.preventDefault();
@@ -22,9 +24,9 @@ function searchCity(e) {
     .then(response => response.json())
     .then(data => {
       console.log(data);
-      const currentTempF = data.current.temp_f;
+       currentTempF = data.current.temp_f;
       console.log(`Current temp in Farenheit: ${currentTempF} F`);
-      const currentTempC = data.current.temp_c;
+       currentTempC = data.current.temp_c;
       console.log(`Current temp in Celsius: ${currentTempC} C`);
       currentCity = data.location.name;
       currentState = data.location.region;
@@ -51,9 +53,9 @@ fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d71085523
   .then(response => response.json())
   .then(data => {
     console.log(data);
-    const currentTempF = data.current.temp_f;
+     currentTempF = data.current.temp_f;
     console.log(`Current temp in Farenheit: ${currentTempF} F`);
-    const currentTempC = data.current.temp_c;
+     currentTempC = data.current.temp_c;
     console.log(`Current temp in Celsius: ${currentTempC} C`);
     currentCity = data.location.name;
     currentState = data.location.region;
