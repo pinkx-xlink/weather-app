@@ -14,6 +14,7 @@ let currentLocation;
 let weatherDescription;
 let currentWeatherIcon;
 
+
 // Default 
 function setDefaultCity() {
   fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q=chicago')
@@ -134,4 +135,4 @@ fetch('https://api.weatherapi.com/v1/astronomy.json?key=48e6d0ed95094ce58d710855
     console.log(error);
   }
   }
-  city.addEventListener('submit', searchCity);
+  document.body.addEventListener('submit', searchCity());
