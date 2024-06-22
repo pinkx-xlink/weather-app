@@ -31,7 +31,7 @@ try {
   console.log(error);
 }
 // Fetch the current forecast (min and high temps)
-fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d710855232908&q=chicago')
+fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d710855232908&q=chicago&days=3')
   .then(response => response.json())
   .then(data => {
     console.log(data.forecast);
