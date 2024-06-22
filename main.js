@@ -7,6 +7,8 @@ const tomorrowTempCard = document.getElementById('forecast-tomorrow');
 const twoDayForecast = document.getElementById('forecast-in-two-days');
 const astronomy = document.querySelector('.astronomy');
 // Fetch the CURRENT temp
+
+let currentCity;
 fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q=chicago')
   .then(response => response.json())
   .then(data => {
@@ -15,7 +17,7 @@ fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d71085523
     console.log(`Current temp in Farenheit: ${currentTempF} F`)
     const currentTempC = data.current.temp_c;
     console.log(`Current temp in Celsius: ${currentTempC} C`)
-    const currentCity = data.location.name;
+    currentCity = data.location.name;
     const currentState = data.location.region;
     const currentLocation = currentCity + ', ' + currentState;
     const weatherDescription = data.current.condition.text;
