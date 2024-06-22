@@ -25,8 +25,8 @@ fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d71085523
     city.innerHTML = currentLocation;
     currentTempCard.innerHTML = `
     <img src=${currentWeatherIcon} /img>
-    <h2>${currentTempF}℉</h2>
     <p>${weatherDescription}</p>
+    <h2>${currentTempF}℉</h2>
     `;
   });
 try {
