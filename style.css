@@ -20,8 +20,9 @@ h1 {
 }
 .nav {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     height: 130px;
+    justify-content: space-between;
 }
 .forecast-container {
     display: flex;
