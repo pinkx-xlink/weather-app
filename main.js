@@ -14,7 +14,9 @@ let currentLocation;
 let weatherDescription;
 let currentWeatherIcon;
 
-fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q=chicago')
+// Default 
+function setDefaultCity() {
+  fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q=chicago')
   .then(response => response.json())
   .then(data => {
     console.log(data);
@@ -41,6 +43,9 @@ try {
 } catch (error) {
   console.log(error);
 }
+}
+setDefaultCity();
+
 // Fetch the current forecast (min and high temps)
 fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d710855232908&q=chicago&days=3')
   .then(response => response.json())
