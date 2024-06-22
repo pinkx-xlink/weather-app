@@ -56,25 +56,6 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d7108552
     console.log(error);
   }
 
-// Fetch tomorrow's forecast
-// fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d710855232908&q=chicago')
-//   .then(response => response.json())
-//   .then(data => {
-//     const tmrwHighTemp = data.forecast.forecastday[1].day.maxtemp_f;
-//     console.log(data.forecast);
-//     // const tempLow = data.forecast.forecastday[1].day.mintemp_f;
-//     tomorrowTempCard.innerHTML += `
-//     <p>High: ${tmrwHighTemp}</p>
-//     <p>Low:  </p>
-//     `;
-//   })
-//   try {
-//     // nonexistantFunction();
-//   } catch (error) {
-//     console.log(error);
-//   }
-
-
 // Fetch the current astronomy
 fetch('https://api.weatherapi.com/v1/astronomy.json?key=48e6d0ed95094ce58d710855232908&q=chicago')
   .then(response => response.json())
