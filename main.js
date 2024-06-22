@@ -48,6 +48,39 @@ try {
 }
 setDefaultCity();
 
+const submit = document.querySelector('.submit');
+submit.addEventListener('click', function searchCity(e) {
+
+  e.preventDefault();
+  const search = document.querySelector('.searchbar').value;
+  fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q='+`${search}`)
+  .then(response => response.json())
+  .then(resp => {
+    console.log(resp);
+     currentTempF = resp.current.temp_f;
+    console.log(`Current temp in Farenheit: ${currentTempF} F`)
+     currentTempC = resp.current.temp_c;
+    console.log(`Current temp in Celsius: ${currentTempC} C`)
+    currentCity = resp.location.name;
+    currentState = resp.location.region;
+     currentLocation = currentCity + ', ' + currentState;
+     weatherDescription = resp.current.condition.text;
+     currentWeatherIcon = resp.current.condition.icon;
+    console.log(`${currentLocation}`);
+    // data is stored as an object
+    city.innerHTML = currentLocation;
+    currentTempCard.innerHTML = `
+    <img src=${currentWeatherIcon} /img>
+    <p>${weatherDescription}</p>
+    <h2>${currentTempF}℉</h2>
+    `;
+  });
+try {
+  // nonexistantFunction();
+} catch (error) {
+  console.log(error);
+}
+});
 // Fetch the current forecast (min and high temps)
 fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d710855232908&q=chicago&days=3')
   .then(response => response.json())
@@ -105,38 +138,4 @@ fetch('https://api.weatherapi.com/v1/astronomy.json?key=48e6d0ed95094ce58d710855
     console.log(error);
   }
 
-  function searchCity(e) { 
-    e.preventDefault();
-    const search = document.querySelector('.searchbar').value;
-    fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q='+`${search}`)
-    .then(response => response.json())
-    .then(resp => {
-      console.log(resp);
-       currentTempF = resp.current.temp_f;
-      console.log(`Current temp in Farenheit: ${currentTempF} F`)
-       currentTempC = resp.current.temp_c;
-      console.log(`Current temp in Celsius: ${currentTempC} C`)
-      currentCity = resp.location.name;
-      currentState = resp.location.region;
-       currentLocation = currentCity + ', ' + currentState;
-       weatherDescription = resp.current.condition.text;
-       currentWeatherIcon = resp.current.condition.icon;
-      console.log(`${currentLocation}`);
-      // data is stored as an object
-      city.innerHTML = currentLocation;
-      currentTempCard.innerHTML = `
-      <img src=${currentWeatherIcon} /img>
-      <p>${weatherDescription}</p>
-      <h2>${currentTempF}℉</h2>
-      `;
-    });
-  try {
-    // nonexistantFunction();
-  } catch (error) {
-    console.log(error);
-  }
-  }
-
-
-  const forecastContainer = document.querySelector('.forecast-container');
-forecastContainer.addEventListener('submit', searchCity());
+  
