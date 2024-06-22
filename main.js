@@ -4,6 +4,7 @@ const city = document.querySelector('.city');
 const temp = document.querySelector('.temp');
 const currentTempCard = document.getElementById('forecast-today');
 const tomorrowTempCard = document.getElementById('forecast-tomorrow');
+const astronomy = document.querySelector('.astronomy');
 // Fetch the CURRENT temp
 fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q=chicago')
   .then(response => response.json())
@@ -59,10 +60,13 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d7108552
 // Fetch the current astronomy
 fetch('https://api.weatherapi.com/v1/astronomy.json?key=48e6d0ed95094ce58d710855232908&q=chicago')
   .then(response => response.json())
-  .then(data => { console.log(data) })
+  .then(data => { 
+    console.log(data);
+    const moonPhase = data.astronomy.astro.moon_phase;
+    astronomy.innerHTML += `${moonPhase}`;
+  })
   try {
     // nonexistantFunction();
   } catch (error) {
     console.log(error);
   }
-// Fetch the forecast for in two days from now
