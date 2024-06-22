@@ -42,8 +42,8 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d7108552
     const tempHigh = data.forecast.forecastday[0].day.maxtemp_f;
     const tempLow = data.forecast.forecastday[0].day.mintemp_f;
     currentTempCard.innerHTML += `
-    <p>High: ${tempHigh}</p>
-    <p>Low: ${tempLow} </p>
+    <p>High: ${tempHigh}℉</p>
+    <p>Low: ${tempLow}℉</p>
     `;
     const tmrwAverageTemp = data.forecast.forecastday[1].day.avgtemp_f;
     const tmrwHighTemp = data.forecast.forecastday[1].day.maxtemp_f;
@@ -53,9 +53,9 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d7108552
     tomorrowTempCard.innerHTML = `
      <img src=${tmrwWeatherIcon} /img>
     <p>${tmrwWeatherDescription}</p>
-    <h2>${tmrwAverageTemp}</h2>
-    <p>High: ${tmrwHighTemp}</p>
-    <p>Low: ${tmrwLowTemp} </p>
+    <h2>${tmrwAverageTemp}℉</h2>
+    <p>High: ${tmrwHighTemp}℉</p>
+    <p>Low: ${tmrwLowTemp}℉</p>
     `;
     const twoDayAverageTemp = data.forecast.forecastday[2].day.avgtemp_f;
     const twoDayHighTemp = data.forecast.forecastday[2].day.maxtemp_f;
@@ -65,9 +65,9 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d7108552
     twoDayForecast.innerHTML = `
     <img src=${twoDayWeatherIcon} /img>
     <p>${twoDayWeatherDescription}</p>
-    <h2>${twoDayAverageTemp}</h2>
-    <p>High: ${twoDayHighTemp}</p>
-    <p>Low: ${twoDayLowTemp} </p>
+    <h2>${twoDayAverageTemp}℉</h2>
+    <p>High: ${twoDayHighTemp}℉</p>
+    <p>Low: ${twoDayLowTemp}℉</p>
     `;
   })
   try {
