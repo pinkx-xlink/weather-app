@@ -13,6 +13,8 @@ let currentState;
 let currentLocation;
 let weatherDescription;
 let currentWeatherIcon;
+let currentTempC;
+let currentTempF;
 
 
 // Default 
@@ -21,9 +23,9 @@ function setDefaultCity() {
   .then(response => response.json())
   .then(data => {
     console.log(data);
-    const currentTempF = data.current.temp_f;
+     currentTempF = data.current.temp_f;
     console.log(`Current temp in Farenheit: ${currentTempF} F`)
-    const currentTempC = data.current.temp_c;
+     currentTempC = data.current.temp_c;
     console.log(`Current temp in Celsius: ${currentTempC} C`)
     currentCity = data.location.name;
     currentState = data.location.region;
@@ -109,17 +111,17 @@ fetch('https://api.weatherapi.com/v1/astronomy.json?key=48e6d0ed95094ce58d710855
     const search = document.querySelector('.searchbar').value;
     fetch(`https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q=${search}`)
     .then(response => response.json())
-    .then(data => {
-      console.log(data);
-      const currentTempF = data.current.temp_f;
+    .then(resp => {
+      console.log(resp);
+       currentTempF = resp.current.temp_f;
       console.log(`Current temp in Farenheit: ${currentTempF} F`)
-      const currentTempC = data.current.temp_c;
+       currentTempC = resp.current.temp_c;
       console.log(`Current temp in Celsius: ${currentTempC} C`)
-      currentCity = data.location.name;
-      currentState = data.location.region;
+      currentCity = resp.location.name;
+      currentState = resp.location.region;
        currentLocation = currentCity + ', ' + currentState;
-       weatherDescription = data.current.condition.text;
-       currentWeatherIcon = data.current.condition.icon;
+       weatherDescription = resp.current.condition.text;
+       currentWeatherIcon = resp.current.condition.icon;
       console.log(`${currentLocation}`);
       // data is stored as an object
       city.innerHTML = currentLocation;
