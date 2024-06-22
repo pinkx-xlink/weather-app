@@ -1,6 +1,7 @@
 const url = 'https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q=chicago';
 
 const city = document.querySelector('.city');
+city.addEventListener('submit', searchCity());
 const temp = document.querySelector('.temp');
 const currentTempCard = document.getElementById('forecast-today');
 const tomorrowTempCard = document.getElementById('forecast-tomorrow');
@@ -129,3 +130,4 @@ fetch('https://api.weatherapi.com/v1/astronomy.json?key=48e6d0ed95094ce58d710855
     console.log(error);
   }
   }
+  
