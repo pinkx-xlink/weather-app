@@ -15,12 +15,13 @@ fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d71085523
     const currentCity = data.location.name;
     const currentState = data.location.region;
     const currentLocation = currentCity + ', ' + currentState;
+    const weatherDescription = data.current.condition.text;
     console.log(`${currentLocation}`);
     // data is stored as an object
     city.innerHTML = currentLocation;
     currentTempCard.innerHTML = `
     <h2>${currentTempF}℉</h2>
-    <p>${data.current.condition.text}</p>
+    <p>${weatherDescription}</p>
     `;
   });
 try {
