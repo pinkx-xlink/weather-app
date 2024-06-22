@@ -16,7 +16,6 @@ let currentWeatherIcon;
 let currentTempC;
 let currentTempF;
 
-
 // Default 
 function setDefaultCity() {
   fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q=chicago')
@@ -106,10 +105,10 @@ fetch('https://api.weatherapi.com/v1/astronomy.json?key=48e6d0ed95094ce58d710855
     console.log(error);
   }
 
-  function searchCity() { //removed (e)
-   // e.preventDefault();
+  function searchCity(e) { 
+    e.preventDefault();
     const search = document.querySelector('.searchbar').value;
-    fetch(`https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q=${search}`)
+    fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q='+`${search}`)
     .then(response => response.json())
     .then(resp => {
       console.log(resp);
@@ -137,4 +136,7 @@ fetch('https://api.weatherapi.com/v1/astronomy.json?key=48e6d0ed95094ce58d710855
     console.log(error);
   }
   }
-  city.addEventListener('submit', searchCity());
+
+
+  const forecastContainer = document.querySelector('.forecast-container');
+forecastContainer.addEventListener('submit', searchCity());
