@@ -106,8 +106,8 @@ fetch('https://api.weatherapi.com/v1/astronomy.json?key=48e6d0ed95094ce58d710855
     console.log(error);
   }
 
-  function searchCity(e) {
-    e.preventDefault();
+  function searchCity() { //removed (e)
+   // e.preventDefault();
     const search = document.querySelector('.searchbar').value;
     fetch(`https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q=${search}`)
     .then(response => response.json())
@@ -137,4 +137,4 @@ fetch('https://api.weatherapi.com/v1/astronomy.json?key=48e6d0ed95094ce58d710855
     console.log(error);
   }
   }
-  document.body.addEventListener('submit', searchCity());
+  city.addEventListener('submit', searchCity());
