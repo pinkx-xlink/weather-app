@@ -33,9 +33,15 @@ let dayOfWeek = tomorrow.getDay();
 // Array to convert day number to day name
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 // Get the name of the day
-let dayName = days[dayOfWeek];
-console.log("Tomorrow is " + dayName);
+let tmrwDayName = days[dayOfWeek];
+console.log("Tomorrow is " + tmrwDayName);
 
+
+let inTwoDays = new Date(tomorrow);
+inTwoDays.setDate(today.getDate() + 2);
+let dayOfWeekInTwoDays = inTwoDays.getDay();
+let inTwoDaysDayName = days[dayOfWeekInTwoDays];
+console.log(`In two days it's ${inTwoDaysDayName}`);
 
 
 // Default 
@@ -58,8 +64,8 @@ function setDefaultCity() {
       city.innerHTML = currentLocation;
       currentTempCard.innerHTML = `
       <h1> ${currentDayOfWeek} </h1>
-      <h2>${currentTempF}℉</h2>
       <img src=${currentWeatherIcon} /img>
+      <h2>${currentTempF}℉</h2>
       <p>${weatherDescription}</p>
       `;
     });
@@ -93,7 +99,7 @@ submit.addEventListener('click', function searchCity(e) {
       // data is stored as an object
       city.innerHTML = currentLocation;
       currentTempCard.innerHTML = `
-      <h1> </h1>
+      <h1> ${currentDayOfWeek}</h1>
       <h2>${currentTempF}℉</h2>
     <img src=${currentWeatherIcon} /img>
     <p>${weatherDescription}</p>
@@ -122,9 +128,9 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d7108552
     const tmrwWeatherDescription = data.forecast.forecastday[1].day.condition.text;
     const tmrwWeatherIcon = data.forecast.forecastday[1].day.condition.icon;
     tomorrowTempCard.innerHTML = `
-    <h1> ${dayName} </h1>
-    <h2>${tmrwAverageTemp}℉</h2>
+    <h1> ${tmrwDayName} </h1>
     <img src=${tmrwWeatherIcon} /img>
+    <h2>${tmrwAverageTemp}℉</h2>
     <p>${tmrwWeatherDescription}</p>
     <p>High: ${tmrwHighTemp}℉</p>
     <p>Low: ${tmrwLowTemp}℉</p>
@@ -135,8 +141,9 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d7108552
     const twoDayWeatherDescription = data.forecast.forecastday[2].day.condition.text;
     const twoDayWeatherIcon = data.forecast.forecastday[2].day.condition.icon;
     twoDayForecast.innerHTML = `
-    <h2>${twoDayAverageTemp}℉</h2>
+    <h1> ${inTwoDaysDayName} </h1>
     <img src=${twoDayWeatherIcon} /img>
+    <h2>${twoDayAverageTemp}℉</h2>
     <p>${twoDayWeatherDescription}</p>
     <p>High: ${twoDayHighTemp}℉</p>
     <p>Low: ${twoDayLowTemp}℉</p>
