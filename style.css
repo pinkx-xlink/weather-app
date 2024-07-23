@@ -1,10 +1,14 @@
 * {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
 body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: rgb(109, 109, 179);
+    margin: 0px;
+    padding: 20px;
 }
 .header {
     display: flex;
@@ -33,6 +37,8 @@ h1 {
 .temp-card {
     background-color: rgb(220, 235, 248);
     padding: 5px;
+    margin: 5px;
+    margin-bottom: 20px;
     border: 1px solid rgba(55, 43, 124, 0.178);
     border-radius: 5px;
     width: 90%;
@@ -42,5 +48,5 @@ h1 {
     justify-content: space-evenly;
 }
 .temp-card:hover {
-    background-color: rgb(192, 207, 255);
+    background-color: rgb(174, 176, 248);
 }
