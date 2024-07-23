@@ -35,8 +35,6 @@ let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "S
 // Get the name of the day
 let tmrwDayName = days[dayOfWeek];
 console.log("Tomorrow is " + tmrwDayName);
-
-
 let inTwoDays = new Date(tomorrow);
 inTwoDays.setDate(today.getDate() + 2);
 let dayOfWeekInTwoDays = inTwoDays.getDay();
@@ -100,10 +98,12 @@ submit.addEventListener('click', function searchCity(e) {
       city.innerHTML = currentLocation;
       currentTempCard.innerHTML = `
       <h1> ${currentDayOfWeek}</h1>
-       <img src=${currentWeatherIcon} /img>
+      <img src=${currentWeatherIcon} /img>
       <h2>${currentTempF}℉</h2>
-    <p>${weatherDescription}</p>
+      <p>${weatherDescription}</p>
     `;
+    // NEED TO UPDATE FORECAST FOR TOMORROW AND NEXT DAY
+    // ONCE SEARCH IS SUBMITTED
     });
   try {
   // nonexistantFunction();
@@ -140,6 +140,7 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d7108552
     const twoDayLowTemp = data.forecast.forecastday[2].day.mintemp_f;
     const twoDayWeatherDescription = data.forecast.forecastday[2].day.condition.text;
     const twoDayWeatherIcon = data.forecast.forecastday[2].day.condition.icon;
+    console.log(`In ${currentCity} it is ${twoDayHighTemp} `)
     twoDayForecast.innerHTML = `
     <h1> ${inTwoDaysDayName} </h1>
     <img src=${twoDayWeatherIcon} /img>
