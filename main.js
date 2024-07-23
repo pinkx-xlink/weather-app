@@ -23,6 +23,22 @@ let dayOfWeekTmrw = new Date();
 dayOfWeekTmrw.setDate(day.getDate() + 1);
 let dayOfWeekTwoDaysFromNow;
 
+
+// Get days of week
+let today = new Date();
+// Add one day to the current date
+let tomorrow = new Date(today);
+tomorrow.setDate(today.getDate() + 1);
+// Get the day of the week for tomorrow (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
+let dayOfWeek = tomorrow.getDay();
+// Array to convert day number to day name
+let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+// Get the name of the day
+let dayName = days[dayOfWeek];
+console.log("Tomorrow is " + dayName);
+
+
+
 // Default 
 function setDefaultCity() {
   fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q=chicago')
