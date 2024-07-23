@@ -19,9 +19,8 @@ let currentHighTemp;
 let currentLowTemp;
 let currentDayOfWeek = (new Date().toLocaleString('en-us', {  weekday: 'long' }));
 let day = new Date();
-let dayOfWeekTmrw = new Date();
-dayOfWeekTmrw.setDate(day.getDate() + 1);
-let dayOfWeekTwoDaysFromNow;
+let dateTwoDaysFromNow = new Date();
+dateTwoDaysFromNow.setDate(day.getDate() + 2);
 
 
 // Get days of week
@@ -123,7 +122,7 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d7108552
     const tmrwWeatherDescription = data.forecast.forecastday[1].day.condition.text;
     const tmrwWeatherIcon = data.forecast.forecastday[1].day.condition.icon;
     tomorrowTempCard.innerHTML = `
-    <h1> ${dayOfWeekTmrw} </h1>
+    <h1> ${dayName} </h1>
     <h2>${tmrwAverageTemp}℉</h2>
     <img src=${tmrwWeatherIcon} /img>
     <p>${tmrwWeatherDescription}</p>
