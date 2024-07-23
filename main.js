@@ -100,8 +100,8 @@ submit.addEventListener('click', function searchCity(e) {
       city.innerHTML = currentLocation;
       currentTempCard.innerHTML = `
       <h1> ${currentDayOfWeek}</h1>
+       <img src=${currentWeatherIcon} /img>
       <h2>${currentTempF}℉</h2>
-    <img src=${currentWeatherIcon} /img>
     <p>${weatherDescription}</p>
     `;
     });
