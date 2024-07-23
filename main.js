@@ -104,9 +104,8 @@ submit.addEventListener('click', function searchCity(e) {
     `;
     });
 
-// NEED TO UPDATE FORECAST FOR TOMORROW AND NEXT DAY
-// ONCE SEARCH IS SUBMITTED
 
+    // update two dat forecast
     fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d710855232908&q='+`${search}`+'&days=3')
     .then(response => response.json())
     .then(data => {
