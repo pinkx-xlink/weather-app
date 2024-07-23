@@ -37,10 +37,10 @@ function setDefaultCity() {
       // data is stored as an object
       city.innerHTML = currentLocation;
       currentTempCard.innerHTML = `
-    <img src=${currentWeatherIcon} /img>
-    <p>${weatherDescription}</p>
-    <h2>${currentTempF}℉</h2>
-    `;
+      <h2>${currentTempF}℉</h2>
+      <img src=${currentWeatherIcon} /img>
+      <p>${weatherDescription}</p>
+      `;
     });
   try {
   // nonexistantFunction();
@@ -72,9 +72,9 @@ submit.addEventListener('click', function searchCity(e) {
       // data is stored as an object
       city.innerHTML = currentLocation;
       currentTempCard.innerHTML = `
+      <h2>${currentTempF}℉</h2>
     <img src=${currentWeatherIcon} /img>
     <p>${weatherDescription}</p>
-    <h2>${currentTempF}℉</h2>
     `;
     });
   try {
@@ -100,9 +100,9 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d7108552
     const tmrwWeatherDescription = data.forecast.forecastday[1].day.condition.text;
     const tmrwWeatherIcon = data.forecast.forecastday[1].day.condition.icon;
     tomorrowTempCard.innerHTML = `
-     <img src=${tmrwWeatherIcon} /img>
-    <p>${tmrwWeatherDescription}</p>
     <h2>${tmrwAverageTemp}℉</h2>
+    <img src=${tmrwWeatherIcon} /img>
+    <p>${tmrwWeatherDescription}</p>
     <p>High: ${tmrwHighTemp}℉</p>
     <p>Low: ${tmrwLowTemp}℉</p>
     `;
@@ -112,9 +112,9 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d7108552
     const twoDayWeatherDescription = data.forecast.forecastday[2].day.condition.text;
     const twoDayWeatherIcon = data.forecast.forecastday[2].day.condition.icon;
     twoDayForecast.innerHTML = `
+    <h2>${twoDayAverageTemp}℉</h2>
     <img src=${twoDayWeatherIcon} /img>
     <p>${twoDayWeatherDescription}</p>
-    <h2>${twoDayAverageTemp}℉</h2>
     <p>High: ${twoDayHighTemp}℉</p>
     <p>Low: ${twoDayLowTemp}℉</p>
     `;
