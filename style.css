@@ -27,11 +27,12 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 30px;
+    margin-top: 15px;
+    gap: 16px;
 }
 .temp-card {
     background-color: rgb(220, 235, 248);
-    padding: 25px;
+    padding: 5px;
     border: 1px solid rgba(55, 43, 124, 0.178);
     border-radius: 5px;
     width: 90%;
@@ -39,4 +40,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+}
+.temp-card:hover {
+    background-color: rgb(192, 207, 255);
 }
