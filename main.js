@@ -15,6 +15,8 @@ let weatherDescription;
 let currentWeatherIcon;
 let currentTempC;
 let currentTempF;
+let currentHighTemp;
+let currentLowTemp;
 
 // Default 
 function setDefaultCity() {

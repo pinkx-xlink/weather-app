@@ -35,4 +35,8 @@ h1 {
     border: 1px solid rgba(55, 43, 124, 0.178);
     border-radius: 5px;
     width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
