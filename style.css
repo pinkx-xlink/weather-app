@@ -29,6 +29,7 @@ h1 {
 }
 .astronomy {
     font-size: larger;
+
 }
 .forecast-container {
     display: flex;
@@ -36,6 +37,10 @@ h1 {
     justify-content: space-evenly;
     margin-top: 15px;
     gap: 16px;
+}
+.temp-card-title {
+    font-size: x-large;
+    font-style: italic;
 }
 .temp-card {
     background-color: rgb(220, 235, 248);

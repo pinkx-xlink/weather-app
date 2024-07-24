@@ -61,7 +61,7 @@ function setDefaultCity() {
       // data is stored as an object
       city.innerHTML = currentLocation;
       currentTempCard.innerHTML = `
-      <h1> ${currentDayOfWeek} </h1>
+      <p class="temp-card-title"> ${currentDayOfWeek} </p>
       <img src=${currentWeatherIcon} /img>
       <h2>${currentTempF}℉</h2>
       <p>${weatherDescription}</p>
@@ -121,7 +121,7 @@ submit.addEventListener('click', function searchCity(e) {
     const tmrwWeatherDescription = data.forecast.forecastday[1].day.condition.text;
     const tmrwWeatherIcon = data.forecast.forecastday[1].day.condition.icon;
     tomorrowTempCard.innerHTML = `
-    <h1> ${tmrwDayName} </h1>
+    <p class="temp-card-title"> ${tmrwDayName} </p>
     <img src=${tmrwWeatherIcon} /img>
     <h2>${tmrwAverageTemp}℉</h2>
     <p>${tmrwWeatherDescription}</p>
@@ -135,7 +135,7 @@ submit.addEventListener('click', function searchCity(e) {
     const twoDayWeatherIcon = data.forecast.forecastday[2].day.condition.icon;
     console.log(`In ${currentCity} it is ${twoDayHighTemp} `)
     twoDayForecast.innerHTML = `
-    <h1> ${inTwoDaysDayName} </h1>
+    <p class="temp-card-title"> ${inTwoDaysDayName} </p>
     <img src=${twoDayWeatherIcon} /img>
     <h2>${twoDayAverageTemp}℉</h2>
     <p>${twoDayWeatherDescription}</p>
@@ -163,7 +163,7 @@ submit.addEventListener('click', function searchCity(e) {
         // data is stored as an object
         city.innerHTML = currentLocation;
         currentTempCard.innerHTML = `
-        <h1> ${currentDayOfWeek}</h1>
+        <p class="temp-card-title"> ${currentDayOfWeek}</p>
         <img src=${currentWeatherIcon} /img>
         <h2>${currentTempC}C</h2>
         <p>${weatherDescription}</p>
@@ -186,7 +186,7 @@ submit.addEventListener('click', function searchCity(e) {
       const tmrwWeatherDescription = data.forecast.forecastday[1].day.condition.text;
       const tmrwWeatherIcon = data.forecast.forecastday[1].day.condition.icon;
       tomorrowTempCard.innerHTML = `
-      <h1> ${tmrwDayName} </h1>
+      <p class="temp-card-title"> ${tmrwDayName} </p>
       <img src=${tmrwWeatherIcon} /img>
       <h2>${tmrwAverageTemp}C</h2>
       <p>${tmrwWeatherDescription}</p>
@@ -200,7 +200,7 @@ submit.addEventListener('click', function searchCity(e) {
       const twoDayWeatherIcon = data.forecast.forecastday[2].day.condition.icon;
       console.log(`In ${currentCity} it is ${twoDayHighTemp} `)
       twoDayForecast.innerHTML = `
-      <h1> ${inTwoDaysDayName} </h1>
+      <p class="temp-card-title"> ${inTwoDaysDayName} </p>
       <img src=${twoDayWeatherIcon} /img>
       <h2>${twoDayAverageTemp}C</h2>
       <p>${twoDayWeatherDescription}</p>
@@ -239,7 +239,7 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d7108552
     const tmrwWeatherDescription = data.forecast.forecastday[1].day.condition.text;
     const tmrwWeatherIcon = data.forecast.forecastday[1].day.condition.icon;
     tomorrowTempCard.innerHTML = `
-    <h1> ${tmrwDayName} </h1>
+    <p class="temp-card-title"> ${tmrwDayName} </p>
     <img src=${tmrwWeatherIcon} /img>
     <h2>${tmrwAverageTemp}℉</h2>
     <p>${tmrwWeatherDescription}</p>
@@ -253,7 +253,7 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d7108552
     const twoDayWeatherIcon = data.forecast.forecastday[2].day.condition.icon;
     console.log(`In ${currentCity} it is ${twoDayHighTemp} `)
     twoDayForecast.innerHTML = `
-    <h1> ${inTwoDaysDayName} </h1>
+    <p class="temp-card-title"> ${inTwoDaysDayName} </p>
     <img src=${twoDayWeatherIcon} /img>
     <h2>${twoDayAverageTemp}℉</h2>
     <p>${twoDayWeatherDescription}</p>
