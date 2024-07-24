@@ -20,6 +20,16 @@ h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-style: italic;
 }
+input[type="submit"] {
+    border: none;
+    border-radius: 50px;
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+}
+input[type="submit"]:hover {
+    background-color:rgba(0, 60, 255, 0.712);
+}
 .nav {
     display: flex;
     flex-direction: row;
