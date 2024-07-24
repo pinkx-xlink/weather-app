@@ -20,16 +20,19 @@ h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-style: italic;
 }
-
 .nav {
     display: flex;
     flex-direction: row;
     height: 130px;
     justify-content: space-between;
 }
+.settings {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
 .astronomy {
     font-size: larger;
-
 }
 .forecast-container {
     display: flex;
