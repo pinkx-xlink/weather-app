@@ -77,7 +77,8 @@ setDefaultCity();
 
 const submit = document.querySelector('.submit');
 submit.addEventListener('click', function searchCity(e) {
-
+  // show temp in Farenheit
+  if(document.getElementById('F').checked) {
   e.preventDefault();
   const search = document.querySelector('.searchbar').value;
   fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q='+`${search}`)
@@ -103,8 +104,6 @@ submit.addEventListener('click', function searchCity(e) {
       <p>${weatherDescription}</p>
     `;
     });
-
-
     // update two dat forecast
     fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d710855232908&q='+`${search}`+'&days=3')
     .then(response => response.json())
@@ -144,6 +143,12 @@ submit.addEventListener('click', function searchCity(e) {
     <p>Low: ${twoDayLowTemp}℉</p>
     `;
     });
+  } else if (document.getElementById('C').checked) {
+    // show temp in Celsius
+    console.log('Switching to Celsius...');
+
+  }
+
     // END OF updating future forecast for searched city
   try {
   // nonexistantFunction();
