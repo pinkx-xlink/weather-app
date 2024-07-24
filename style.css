@@ -31,6 +31,54 @@ h1 {
     gap: 50px;
     align-items: center;
 }
+.temp-setting {
+    background-color: rgba(0, 183, 255, 0.822);
+    border: 2px solid rgba(0, 60, 255, 0.822);
+    border-radius: 50px;
+    height: 55px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 15px;
+    padding-bottom: 20px;
+}
+
+input[type=radio]{
+    position:relative;
+    margin:5px;
+}
+input[type=radio]:before{
+    position:absolute;
+    height:30px;
+    width:30px;
+    top:-5px;
+    left:-5px;
+    content:'';
+    background:white;
+    border-radius:100%;
+}
+input[type=radio]:after{
+    position:absolute;
+    display:none;
+    height:15px;
+    width:15px;
+    top:5px;
+    left:5px;
+    content:'';
+    background:grey;
+    border-radius:100%;
+}
+input[type=radio]:checked:after{
+    display:block;
+}
+
 .astronomy {
     font-size: larger;
 }
