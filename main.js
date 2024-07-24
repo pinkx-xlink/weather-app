@@ -146,7 +146,68 @@ submit.addEventListener('click', function searchCity(e) {
   } else if (document.getElementById('C').checked) {
     // show temp in Celsius
     console.log('Switching to Celsius...');
-
+    e.preventDefault();
+    const search = document.querySelector('.searchbar').value;
+    fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q='+`${search}`)
+      .then(response => response.json())
+      .then(resp => {
+        console.log(resp);
+        currentTempC = resp.current.temp_c;
+        console.log(`Current temp in Celsius: ${currentTempC} C`)
+        currentCity = resp.location.name;
+        currentState = resp.location.region;
+        currentLocation = currentCity + ', ' + currentState;
+        weatherDescription = resp.current.condition.text;
+        currentWeatherIcon = resp.current.condition.icon;
+        console.log(`${currentLocation}`);
+        // data is stored as an object
+        city.innerHTML = currentLocation;
+        currentTempCard.innerHTML = `
+        <h1> ${currentDayOfWeek}</h1>
+        <img src=${currentWeatherIcon} /img>
+        <h2>${currentTempC}C</h2>
+        <p>${weatherDescription}</p>
+      `;
+      });
+      // update two dat forecast
+      fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d710855232908&q='+`${search}`+'&days=3')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data.forecast);
+      const tempHigh = data.forecast.forecastday[0].day.maxtemp_c;
+      const tempLow = data.forecast.forecastday[0].day.mintemp_c;
+      currentTempCard.innerHTML += `
+      <p>High: ${tempHigh}C</p>
+      <p>Low: ${tempLow}C</p>
+      `;
+      const tmrwAverageTemp = data.forecast.forecastday[1].day.avgtemp_c;
+      const tmrwHighTemp = data.forecast.forecastday[1].day.maxtemp_c;
+      const tmrwLowTemp = data.forecast.forecastday[1].day.mintemp_c;
+      const tmrwWeatherDescription = data.forecast.forecastday[1].day.condition.text;
+      const tmrwWeatherIcon = data.forecast.forecastday[1].day.condition.icon;
+      tomorrowTempCard.innerHTML = `
+      <h1> ${tmrwDayName} </h1>
+      <img src=${tmrwWeatherIcon} /img>
+      <h2>${tmrwAverageTemp}C</h2>
+      <p>${tmrwWeatherDescription}</p>
+      <p>High: ${tmrwHighTemp}C</p>
+      <p>Low: ${tmrwLowTemp}C</p>
+      `;
+      const twoDayAverageTemp = data.forecast.forecastday[2].day.avgtemp_c;
+      const twoDayHighTemp = data.forecast.forecastday[2].day.maxtemp_c;
+      const twoDayLowTemp = data.forecast.forecastday[2].day.mintemp_c;
+      const twoDayWeatherDescription = data.forecast.forecastday[2].day.condition.text;
+      const twoDayWeatherIcon = data.forecast.forecastday[2].day.condition.icon;
+      console.log(`In ${currentCity} it is ${twoDayHighTemp} `)
+      twoDayForecast.innerHTML = `
+      <h1> ${inTwoDaysDayName} </h1>
+      <img src=${twoDayWeatherIcon} /img>
+      <h2>${twoDayAverageTemp}C</h2>
+      <p>${twoDayWeatherDescription}</p>
+      <p>High: ${twoDayHighTemp}C</p>
+      <p>Low: ${twoDayLowTemp}C</p>
+      `;
+      });
   }
 
     // END OF updating future forecast for searched city
