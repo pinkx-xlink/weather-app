@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: rgb(153, 153, 192);
+    background-image: linear-gradient(to left, yellow, orange);
     margin: 0px;
     padding: 20px;
 }
