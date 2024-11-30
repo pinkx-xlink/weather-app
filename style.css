@@ -101,8 +101,9 @@ input[type=radio]:checked:after{
     gap: 16px;
 }
 .temp-card-title {
-    font-size: x-large;
-    font-style: italic;
+    font-size: large;
+    height: 50px;
+    background-color: white;
 }
 .temp-card {
     background-color: rgb(220, 235, 248);
@@ -110,8 +111,8 @@ input[type=radio]:checked:after{
     margin: 5px;
     margin-bottom: 20px;
     border: 1px solid rgba(55, 43, 124, 0.178);
-    border-radius: 5px;
-    max-height: 50%;
+    border-radius: 15px;
+    max-height: 300px;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -119,5 +120,5 @@ input[type=radio]:checked:after{
     justify-content: space-evenly;
 }
 .temp-card:hover {
-    background-color: rgb(174, 176, 248);
+    background-color: rgb(88, 90, 150);
 }
