@@ -112,8 +112,7 @@ submit.addEventListener('click', function searchCity(e) {
     const tempHigh = data.forecast.forecastday[0].day.maxtemp_f;
     const tempLow = data.forecast.forecastday[0].day.mintemp_f;
     currentTempCard.innerHTML += `
-    <p>High: ${tempHigh}℉</p>
-    <p>Low: ${tempLow}℉</p>
+    <p>High: ${tempHigh}℉ - Low: ${tempLow}℉</p>
     `;
     const tmrwAverageTemp = data.forecast.forecastday[1].day.avgtemp_f;
     const tmrwHighTemp = data.forecast.forecastday[1].day.maxtemp_f;
@@ -124,10 +123,10 @@ submit.addEventListener('click', function searchCity(e) {
     <p class="temp-card-title"> ${tmrwDayName} </p>
     <img src=${tmrwWeatherIcon} /img>
     <h2>${tmrwAverageTemp}℉</h2>
+    <p>High: ${tmrwHighTemp}℉ - Low: ${tmrwLowTemp}℉</p>
     <p>${tmrwWeatherDescription}</p>
-    <p>High: ${tmrwHighTemp}℉</p>
-    <p>Low: ${tmrwLowTemp}℉</p>
     `;
+
     const twoDayAverageTemp = data.forecast.forecastday[2].day.avgtemp_f;
     const twoDayHighTemp = data.forecast.forecastday[2].day.maxtemp_f;
     const twoDayLowTemp = data.forecast.forecastday[2].day.mintemp_f;
@@ -138,9 +137,8 @@ submit.addEventListener('click', function searchCity(e) {
     <p class="temp-card-title"> ${inTwoDaysDayName} </p>
     <img src=${twoDayWeatherIcon} /img>
     <h2>${twoDayAverageTemp}℉</h2>
+     <p>High: ${twoDayHighTemp}℉ - Low: ${twoDayLowTemp}℉</p>
     <p>${twoDayWeatherDescription}</p>
-    <p>High: ${twoDayHighTemp}℉</p>
-    <p>Low: ${twoDayLowTemp}℉</p>
     `;
     });
   } else if (document.getElementById('C').checked) {
@@ -177,8 +175,7 @@ submit.addEventListener('click', function searchCity(e) {
       const tempHigh = data.forecast.forecastday[0].day.maxtemp_c;
       const tempLow = data.forecast.forecastday[0].day.mintemp_c;
       currentTempCard.innerHTML += `
-      <p>High: ${tempHigh}C</p>
-      <p>Low: ${tempLow}C</p>
+      <p>High: ${tempHigh}C - Low: ${tempLow}C</p>
       `;
       const tmrwAverageTemp = data.forecast.forecastday[1].day.avgtemp_c;
       const tmrwHighTemp = data.forecast.forecastday[1].day.maxtemp_c;
@@ -189,10 +186,10 @@ submit.addEventListener('click', function searchCity(e) {
       <p class="temp-card-title"> ${tmrwDayName} </p>
       <img src=${tmrwWeatherIcon} /img>
       <h2>${tmrwAverageTemp}C</h2>
+      <p>High: ${tmrwHighTemp}C - Low: ${tmrwLowTemp}C</p>
       <p>${tmrwWeatherDescription}</p>
-      <p>High: ${tmrwHighTemp}C</p>
-      <p>Low: ${tmrwLowTemp}C</p>
       `;
+
       const twoDayAverageTemp = data.forecast.forecastday[2].day.avgtemp_c;
       const twoDayHighTemp = data.forecast.forecastday[2].day.maxtemp_c;
       const twoDayLowTemp = data.forecast.forecastday[2].day.mintemp_c;
@@ -203,9 +200,8 @@ submit.addEventListener('click', function searchCity(e) {
       <p class="temp-card-title"> ${inTwoDaysDayName} </p>
       <img src=${twoDayWeatherIcon} /img>
       <h2>${twoDayAverageTemp}C</h2>
+      <p>High: ${twoDayHighTemp}C - Low: ${twoDayLowTemp}C</p>
       <p>${twoDayWeatherDescription}</p>
-      <p>High: ${twoDayHighTemp}C</p>
-      <p>Low: ${twoDayLowTemp}C</p>
       `;
       });
   }
@@ -242,9 +238,8 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d7108552
     <p class="temp-card-title"> ${tmrwDayName} </p>
     <img src=${tmrwWeatherIcon} /img>
     <h2>${tmrwAverageTemp}℉</h2>
+        <p>High: ${tmrwHighTemp}℉ - Low: ${tmrwLowTemp}℉</p>
     <p>${tmrwWeatherDescription}</p>
-    <p>High: ${tmrwHighTemp}℉</p>
-    <p>Low: ${tmrwLowTemp}℉</p>
     `;
     const twoDayAverageTemp = data.forecast.forecastday[2].day.avgtemp_f;
     const twoDayHighTemp = data.forecast.forecastday[2].day.maxtemp_f;
@@ -256,9 +251,8 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d7108552
     <p class="temp-card-title"> ${inTwoDaysDayName} </p>
     <img src=${twoDayWeatherIcon} /img>
     <h2>${twoDayAverageTemp}℉</h2>
+        <p>High: ${twoDayHighTemp}℉ - Low: ${twoDayLowTemp}℉</p>
     <p>${twoDayWeatherDescription}</p>
-    <p>High: ${twoDayHighTemp}℉</p>
-    <p>Low: ${twoDayLowTemp}℉</p>
     `;
   })
 try {
