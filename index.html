@@ -10,6 +10,14 @@
 <body>
     <div class="header">
         <h1>Hello, Weather!</h1>
+        <div class="temp-setting">
+            <label> F 
+                <input type="radio" name ="temp-settings" id="F"/>
+            </label>
+            <label> C
+                <input type="radio" name="temp-settings" id="C" />
+            </label>
+        </div>
         <div class="search">
             <input type="text" class="searchbar" placeholder="Enter a city...">
             <input type="submit" class="submit" value="🔎"></input>
@@ -18,14 +26,6 @@
     <div class="nav">
         <div class="settings">
             <h2 class="city">locating...</h2>
-            <div class="temp-setting">
-                <label> F 
-                    <input type="radio" name ="temp-settings" id="F"/>
-                </label>
-                <label> C
-                    <input type="radio" name="temp-settings" id="C" />
-                </label>
-            </div>
         </div>
         <div class="astronomy">
             <p><b>Moon Phase 🌙🌘 </b></p>

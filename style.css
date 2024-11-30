@@ -36,7 +36,7 @@ input[type="submit"]:hover {
 .nav {
     display: flex;
     flex-direction: row;
-    height: 130px;
+    height: 10%;
     justify-content: space-between;
 }
 .settings {
