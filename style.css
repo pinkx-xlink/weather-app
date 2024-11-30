@@ -8,13 +8,16 @@ body {
     justify-content: center;
     background-image: linear-gradient(to left, yellow, orange);
     margin: 0px;
-    padding: 20px;
 }
+
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     align-content: center;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(241, 0, 209, 0.37);
 }
 h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
