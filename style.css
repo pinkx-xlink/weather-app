@@ -15,8 +15,10 @@ body {
     align-items: center;
     justify-content: space-between;
     align-content: center;
-    width: 100%;
-    padding: 10px;
+    width: 90vw;
+    height: 15vh;
+    padding-left: 5%;
+    padding-right: 5%;
     background-color: rgba(241, 0, 209, 0.37);
 }
 h1 {
