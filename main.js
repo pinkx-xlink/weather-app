@@ -78,7 +78,7 @@ setDefaultCity();
 const submit = document.querySelector('.submit');
 submit.addEventListener('click', function searchCity(e) {
   // show temp in Farenheit
-  if(document.getElementById('toggle-temp-setting').checked) {
+  if(document.getElementById('toggle-temp-setting').checked === false) {
   e.preventDefault();
   const search = document.querySelector('.searchbar').value;
   fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q='+`${search}`)
