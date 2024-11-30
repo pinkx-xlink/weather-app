@@ -42,11 +42,8 @@ input[type="submit"]:hover {
     flex-direction: row;
     height: 10%;
     justify-content: space-between;
-}
-.settings {
-    display: flex;
-    gap: 50px;
     align-items: center;
+    padding-left: 20px;
 }
 label {
     display: flex;
@@ -85,6 +82,9 @@ input[type=radio]:checked:after{
 }
 .astronomy {
     font-size: larger;
+    display: flex;
+    flex-direction: row;
+    width: 40%;
 }
 .forecast-container {
     display: flex;

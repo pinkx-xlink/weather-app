@@ -270,7 +270,7 @@ fetch('https://api.weatherapi.com/v1/astronomy.json?key=48e6d0ed95094ce58d710855
     const moonPhase = data.astronomy.astro.moon_phase;
     // const moonIcon = 
     // add a different icon depending on the moon phase
-    astronomy.innerHTML += `${moonPhase}`;
+    astronomy.innerHTML = `Moon Phase: ${moonPhase}`;
   })
 try {
   // nonexistantFunction();
