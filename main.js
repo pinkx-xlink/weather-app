@@ -253,6 +253,7 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=48e6d0ed95094ce58d7108552
     <h2>${twoDayAverageTemp}℉</h2>
         <p>High: ${twoDayHighTemp}℉ - Low: ${twoDayLowTemp}℉</p>
     <p>${twoDayWeatherDescription}</p>
+
     `;
   })
 try {
