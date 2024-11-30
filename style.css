@@ -8,6 +8,7 @@ body {
     justify-content: center;
     background-image: linear-gradient(to left, yellow, orange);
     margin: 0px;
+    color: rgba(18, 18, 48, 0.911);
 }
 
 .header {
@@ -24,6 +25,7 @@ body {
 h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-style: italic;
+    color: white;
 }
 input[type="submit"] {
     border: none;
@@ -92,19 +94,24 @@ input[type=radio]:checked:after{
     gap: 16px;
 }
 .temp-card-title {
-    font-size: large;
+    font-size: x-large;
+    color: rgba(18, 18, 48, 0.911);
+    padding-top: 15px;
     height: 50px;
-    background-color: white;
+    width: 100%;
+    background-image: linear-gradient(to right, rgba(255, 255, 0, 0.856), rgba(240, 95, 11, 0.616));
+    text-align: center;
+    border-radius: 3px;
 }
 .temp-card {
     background-color: rgb(220, 235, 248);
-    padding: 5px;
+    padding-bottom: 10px;
     margin: 5px;
     margin-bottom: 20px;
     border: 1px solid rgba(55, 43, 124, 0.178);
     box-shadow: 5px 5px 15px 10px pink;
     border-radius: 15px;
-    max-height: 300px;
+    max-height: 50%;
     width: 50%;
     display: flex;
     flex-direction: column;
