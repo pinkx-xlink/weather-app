@@ -98,10 +98,9 @@ submit.addEventListener('click', function searchCity(e) {
       // data is stored as an object
       city.innerHTML = currentLocation;
       currentTempCard.innerHTML = `
-      <h1> ${currentDayOfWeek}</h1>
+      <p class="temp-card-title"> ${currentDayOfWeek}</p>
       <img src=${currentWeatherIcon} /img>
       <h2>${currentTempF}℉</h2>
-      <p>${weatherDescription}</p>
     `;
     });
     // update two dat forecast
@@ -113,6 +112,7 @@ submit.addEventListener('click', function searchCity(e) {
     const tempLow = data.forecast.forecastday[0].day.mintemp_f;
     currentTempCard.innerHTML += `
     <p>High: ${tempHigh}℉ - Low: ${tempLow}℉</p>
+    <p>${weatherDescription}</p>
     `;
     const tmrwAverageTemp = data.forecast.forecastday[1].day.avgtemp_f;
     const tmrwHighTemp = data.forecast.forecastday[1].day.maxtemp_f;
@@ -164,7 +164,6 @@ submit.addEventListener('click', function searchCity(e) {
         <p class="temp-card-title"> ${currentDayOfWeek}</p>
         <img src=${currentWeatherIcon} /img>
         <h2>${currentTempC}C</h2>
-        <p>${weatherDescription}</p>
       `;
       });
       // update two dat forecast
@@ -176,6 +175,7 @@ submit.addEventListener('click', function searchCity(e) {
       const tempLow = data.forecast.forecastday[0].day.mintemp_c;
       currentTempCard.innerHTML += `
       <p>High: ${tempHigh}C - Low: ${tempLow}C</p>
+      <p>${weatherDescription}</p>
       `;
       const tmrwAverageTemp = data.forecast.forecastday[1].day.avgtemp_c;
       const tmrwHighTemp = data.forecast.forecastday[1].day.maxtemp_c;
