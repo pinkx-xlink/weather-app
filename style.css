@@ -44,17 +44,6 @@ input[type="submit"]:hover {
     gap: 50px;
     align-items: center;
 }
-.temp-setting {
-    background-color: orangered;
-    border: 2px solid rgba(255, 196, 0, 0.822);
-    border-radius: 50px;
-    height: 35px;
-    width: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
 label {
     display: flex;
     flex-direction: column;
