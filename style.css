@@ -10,6 +10,7 @@ body {
     margin: 0px;
     color: rgba(18, 18, 48, 0.911);
 }
+
 .header {
     display: flex;
     align-items: center;
@@ -21,11 +22,13 @@ body {
     padding-right: 5%;
     background-color: rgba(241, 0, 209, 0.37);
 }
+
 h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-style: italic;
     color: white;
 }
+
 input[type="submit"] {
     border: none;
     border-radius: 50px;
@@ -33,9 +36,11 @@ input[type="submit"] {
     width: 30px;
     padding: 5px;
 }
+
 input[type="submit"]:hover {
     background-color:rgba(0, 60, 255, 0.329);
 }
+
 .nav {
     display: flex;
     flex-direction: row;
@@ -44,6 +49,7 @@ input[type="submit"]:hover {
     align-items: center;
     padding-left: 20px;
 }
+
 label {
     display: flex;
     flex-direction: column;
@@ -51,11 +57,13 @@ label {
     margin: 15px;
     padding-bottom: 20px;
 }
-input[type=radio]{
+
+input[type=radio] {
     position:relative;
     margin:5px;
 }
-input[type=radio]:before{
+
+input[type=radio]:before {
     position:absolute;
     height:30px;
     width:30px;
@@ -65,7 +73,8 @@ input[type=radio]:before{
     background:white;
     border-radius:100%;
 }
-input[type=radio]:after{
+
+input[type=radio]:after {
     position:absolute;
     display:none;
     height:15px;
@@ -104,17 +113,21 @@ input[type=radio]:checked:after{
     margin-top: 15px;
     gap: 16px;
 }
+
 .temp-card-title {
     font-size: x-large;
-    color: rgba(18, 18, 48, 0.911);
     padding-top: 15px;
     width: 100%;
-    background-image: linear-gradient(to right, rgba(255, 255, 0, 0.856), rgba(240, 95, 11, 0.616));
     text-align: center;
     border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+
 .temp-card {
-    background-color: rgb(220, 235, 248);
+    background-color: rgb(236, 236, 236);
     padding-bottom: 10px;
     margin: 5px;
     margin-bottom: 20px;
@@ -128,6 +141,7 @@ input[type=radio]:checked:after{
     align-items: center;
     justify-content: space-evenly;
 }
+
 .temp-card:hover {
     background-color: rgba(88, 90, 150, 0.301);
 }
