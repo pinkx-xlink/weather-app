@@ -22,7 +22,6 @@ let day = new Date();
 let dateTwoDaysFromNow = new Date();
 dateTwoDaysFromNow.setDate(day.getDate() + 2);
 
-
 // Get days of week
 let today = new Date();
 // Add one day to the current date
@@ -40,7 +39,6 @@ inTwoDays.setDate(today.getDate() + 2);
 let dayOfWeekInTwoDays = inTwoDays.getDay();
 let inTwoDaysDayName = days[dayOfWeekInTwoDays];
 console.log(`In two days it's ${inTwoDaysDayName}`);
-
 
 // Default 
 function setDefaultCity() {
@@ -78,7 +76,7 @@ setDefaultCity();
 const submit = document.querySelector('.submit');
 submit.addEventListener('click', function searchCity(e) {
   // show temp in Farenheit
-  if(document.getElementById('toggle-temp-setting').checked === false) {
+  if (document.getElementById('toggle-temp-setting').checked === false) {
   e.preventDefault();
   const search = document.querySelector('.searchbar').value;
   fetch('https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q='+`${search}`)
@@ -141,7 +139,7 @@ submit.addEventListener('click', function searchCity(e) {
     <p>${twoDayWeatherDescription}</p>
     `;
     });
-  } else  {
+  } else {
     // show temp in Celsius
     console.log('Switching to Celsius...');
     e.preventDefault();
