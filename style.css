@@ -10,7 +10,6 @@ body {
     margin: 0px;
     color: rgba(18, 18, 48, 0.911);
 }
-
 .header {
     display: flex;
     align-items: center;
@@ -77,15 +76,27 @@ input[type=radio]:after{
     background:grey;
     border-radius:100%;
 }
+
+.searchbar {
+  border: none;
+  border-radius: 15px;
+  height: 25px;
+  width: 250px;
+  padding-left: 10px;
+  background-color: rgb(236, 236, 236);
+}
+
 input[type=radio]:checked:after{
     display:block;
 }
+
 .astronomy {
     font-size: larger;
     display: flex;
     flex-direction: row;
     width: 40%;
 }
+
 .forecast-container {
     display: flex;
     flex-direction: row;
