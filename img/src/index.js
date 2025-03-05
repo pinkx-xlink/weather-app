@@ -1,3 +1,8 @@
+import _ from 'lodash';
+// import testFunc from "../../functionn.js";
+
+// testFunc();
+
 const url = 'https://api.weatherapi.com/v1/current.json?key=48e6d0ed95094ce58d710855232908&q=chicago';
 
 const city = document.querySelector('.city');
