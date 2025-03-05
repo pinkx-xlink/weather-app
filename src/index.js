@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import './style.css';
 // import testFunc from "../../functionn.js";
 
 // testFunc();
